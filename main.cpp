@@ -10,11 +10,12 @@
 #include <memory>
 #include "line.h"
 #include "glut.h"
+#include "AntTweakBar.h"
 
 using namespace std;
 
 
-int width = 320, height = 240;
+int width = 800, height = 600;
 
 
 
@@ -60,7 +61,7 @@ int main(int argc, char** argv)
 	// init GLUT and create Window
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(100, 100);
+	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(width, height);
 	glutCreateWindow("Proyecto 1 - rhadames");
 
@@ -74,8 +75,8 @@ int main(int argc, char** argv)
 	shared_ptr<CLine> l1 = make_shared <CLine>(1, 1, 1);
 	shared_ptr<CLine> l2 = make_shared <CLine>(1, 0, 0);
 	
-	l1->set(0, 0, 100, 100);
-	l2->set(100, 100, 200, 100);
+	l1->set(0, 0, 200, 200);
+	l2->set(200, 200, 400, 200);
 
 	shapes.push_back(l1);
 	shapes.push_back(l2);
