@@ -1,2 +1,3 @@
 C:\Daniel\Proyecto 1 Grafica\x64\Debug\Project1.exe
 C:\Daniel\Proyecto 1 Grafica\CGI-1-2022-Tarea_1\x64\Debug\Project1.exe
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\x64\Debug\Project1.exe

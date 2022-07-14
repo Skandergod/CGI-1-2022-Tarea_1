@@ -19,6 +19,8 @@ int width = 800, height = 600;
 
 
 
+
+
 list <shared_ptr<CShape>> shapes;
 
 shared_ptr<CShape> current_shape;
@@ -29,6 +31,7 @@ void renderScene(void)
 	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0f, 0.5f, 0.25f);
+	TwDraw();
 
 	for (auto const& x : shapes) 
 		x->render();
@@ -54,16 +57,53 @@ void changeSize(int w, int h)
 
 	width = w;
 	height = h;
+
+	TwWindowSize(width, height);
 }
 
 int main(int argc, char** argv)
 {
 	// init GLUT and create Window
+
+	TwBar* bar;
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(width, height);
-	glutCreateWindow("Proyecto 1 - rhadames");
+	glutCreateWindow("Proyecto 1 - Daniel");
+
+	//Antweakbar
+
+		TwInit(TW_OPENGL, NULL);
+		bar = TwNewBar("Figure");
+
+	//Configuracion del Sample
+		// Set GLUT event callbacks
+		// - Directly redirect GLUT mouse button events to AntTweakBar
+		glutMouseFunc((GLUTmousebuttonfun)TwEventMouseButtonGLUT);
+		// - Directly redirect GLUT mouse motion events to AntTweakBar
+		glutMotionFunc((GLUTmousemotionfun)TwEventMouseMotionGLUT);
+		// - Directly redirect GLUT mouse "passive" motion events to AntTweakBar (same as MouseMotion)
+		glutPassiveMotionFunc((GLUTmousemotionfun)TwEventMouseMotionGLUT);
+		// - Directly redirect GLUT key events to AntTweakBar
+		glutKeyboardFunc((GLUTkeyboardfun)TwEventKeyboardGLUT);
+		// - Directly redirect GLUT special key events to AntTweakBar
+		glutSpecialFunc((GLUTspecialfun)TwEventSpecialGLUT);
+		// - Send 'glutGetModifers' function pointer to AntTweakBar;
+		//   required because the GLUT key event functions do not report key modifiers states.
+		TwGLUTModifiersFunc(glutGetModifiers);
+		TwWindowSize(width, height);
+		TwDefine("Figure refresh = '0.0001f'");
+		TwDefine("Figure resizable = false");
+		TwDefine("Figure fontresizable = false");
+		TwDefine("Figure movable = false");
+		TwDefine("Figure visible = false");
+		TwDefine("Figure position = '20 20'");
+		TwDefine("Figure size = '220 320' color='96 216 224'");
+		TwDefine("Figure visible = true");
+
+
+	
 
 	cout << "Hello..." << endl;
 
