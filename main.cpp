@@ -3,13 +3,13 @@
 // 2. Bajar AntTweakBar http://anttweakbar.sourceforge.net/doc/
 // 3. Bajar "Open File Dialog", "open"
 
-#define FREEGLUT_STATIC
-#include "GL/freeglut.h"
+#include <cstdlib>
+#include "include/GL/freeglut.h"
 #include <list>
 #include <iostream>
 #include <memory>
-#include "line.h"
-#include "glut.h"
+#include "Figure.h"
+#include "Line.h"
 #include "AntTweakBar.h"
 
 using namespace std;
@@ -18,12 +18,13 @@ using namespace std;
 int width = 800, height = 600;
 
 
+list <shared_ptr<CFigure>> shapes;
+
+shared_ptr<CFigure> current_shape;
 
 
-
-list <shared_ptr<CShape>> shapes;
-
-shared_ptr<CShape> current_shape;
+shared_ptr<CLine> l1;
+shared_ptr<CLine> l2;
 
 
 void renderScene(void) 
@@ -32,10 +33,10 @@ void renderScene(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0f, 0.5f, 0.25f);
 	TwDraw();
-
-	for (auto const& x : shapes) 
-		x->render();
 	
+	l1->drawLine(0, 0, 200, 200, 0, 0);
+	l2->drawLine(200, 200, 400, 200, 0, 0);
+
 	glutSwapBuffers();
 }
 
@@ -111,12 +112,9 @@ int main(int argc, char** argv)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(0, width, 0, height, -1, 1);
-
-	shared_ptr<CLine> l1 = make_shared <CLine>(1, 1, 1);
-	shared_ptr<CLine> l2 = make_shared <CLine>(1, 0, 0);
 	
-	l1->set(0, 0, 200, 200);
-	l2->set(200, 200, 400, 200);
+	l1->drawLine(0, 0, 200, 200,0,0);
+	l2->drawLine(200, 200, 400, 200,0,0);
 
 	shapes.push_back(l1);
 	shapes.push_back(l2);

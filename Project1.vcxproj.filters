@@ -18,31 +18,52 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="shape.h">
+    <ClInclude Include="Figure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="line.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="freeglut.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="freeglut_ext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="freeglut_std.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="freeglut_ucall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="glut.h">
+    <ClInclude Include="Line.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AntTweakBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\freeglut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\freeglut_ext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\freeglut_std.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\glut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Project1.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\x64\freeglut.lib">
+      <Filter>Header Files</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x64\freeglut.dll">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

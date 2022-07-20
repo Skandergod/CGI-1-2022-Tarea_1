@@ -1,23 +1,2 @@
 ﻿  main.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\xutility(149,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\memory(2010): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int,int,int>(_Ty &,int &&,int &&,int &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=CLine
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\memory(2729): message : see reference to function template instantiation 'std::_Ref_count_obj2<CLine>::_Ref_count_obj2<_Ty,_Ty,_Ty>(_Ty &&,_Ty &&,_Ty &&)' being compiled
-          with
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\memory(2730): message : see reference to function template instantiation 'std::_Ref_count_obj2<CLine>::_Ref_count_obj2<_Ty,_Ty,_Ty>(_Ty &&,_Ty &&,_Ty &&)' being compiled
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(115): message : see reference to function template instantiation 'std::shared_ptr<CLine> std::make_shared<CLine,int,int,int>(int &&,int &&,int &&)' being compiled
   Project1.vcxproj -> C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\x64\Debug\Project1.exe
