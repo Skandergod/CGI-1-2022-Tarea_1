@@ -28,29 +28,7 @@ shared_ptr<CLine> l1;
 shared_ptr<CLine> l2;
 
 
-//  define the window position on screen
-float main_window_x;
-float main_window_y;
 
-//  variables representing the window size
-float main_window_w = 256 + GAP * 2;
-float main_window_h = 256 + 64 + GAP * 3;
-
-//  define the window position on screen
-float subwindow1_x = GAP;
-float subwindow1_y = GAP;
-
-//  variables representing the window size
-float subwindow1_w = 256;
-float subwindow1_h = 256;
-
-//  define the window position on screen
-float subwindow2_x = GAP;
-float subwindow2_y = GAP + 256 + GAP;
-
-//  variables representing the window size
-float subwindow2_w = 256;
-float subwindow2_h = 64;
 
 
 void subwindow1_display(void);
@@ -139,6 +117,7 @@ void main_pmotion(int x, int y)
 
 void renderScene(void) 
 {
+
 	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0f, 0.5f, 0.25f);
@@ -173,15 +152,29 @@ void changeSize(int w, int h)
 
 void changeSize2(int w, int h)
 {
-
+	glColor3f(1.0f, 0.0f, 0.00f);
 	TwWindowSize(width, height);
 }
 
 void subwindow1_display(void)
 {
+	printf("Drawing SubWindow 1 contents.\n");
+
+	//  Set background color to blue
+	glClearColor(0.0, 0.0, 1.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	//  Set drawing color to yellow
+	glColor3f(1, 1, 0);
+
+	//  Draw teapot
+	//glutWireTeapot(0.5);
+
+	//  Swap front and back buffers
 	
 	TwDraw();
-
+	glutSwapBuffers();
+	
 }
 
 void main_keyboard(unsigned char key, int x, int y)
@@ -264,10 +257,21 @@ void subwindow2_reshape(int width, int height)
 
 void subwindow2_display(void)
 {
+	//  Notify that we are displaying subwindow 2
+	printf("Drawing SubWindow 2 contents.\n");
 
-	l1->drawLine(0, 0, 200, 200, 0, 0);
-	l2->drawLine(300, 200, 400, 200, 0, 0);
+	//  Set background color to yellow
+	glClearColor(1.0, 1.0, 0.0, 0.0);
+	glClear(GL_COLOR_BUFFER_BIT);
 
+	//  Set drawing color to blue
+	glColor3f(0, 0, 1);
+
+	//  Draw teapot
+	glutWireTeapot(0.5);
+
+	//  Swap front and back buffers
+	glutSwapBuffers();
 
 }
 
@@ -561,8 +565,8 @@ int main(int argc, char** argv)
 	TwBar* bar;
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(-200, -200);
-	glutInitWindowSize(width, height);
+	glutInitWindowPosition(0, 0);
+	glutInitWindowSize(800, 600);
 	
 
 	mainWindow = glutCreateWindow("Proyecto 1 - Daniel");
@@ -584,7 +588,7 @@ int main(int argc, char** argv)
 		TwInit(TW_OPENGL, NULL);
 		bar = TwNewBar("Figure");
 
-		int subwindow_1 = glutCreateSubWindow(mainWindow, subwindow1_x, subwindow1_y, subwindow1_w, subwindow1_h);
+		int subwindow_1 = glutCreateSubWindow(mainWindow, 0, 0, 256, 600);
 
 		//Configuracion del Sample
 		// Set GLUT event callbacks
@@ -604,7 +608,7 @@ int main(int argc, char** argv)
 		// - Send 'glutGetModifers' function pointer to AntTweakBar;
 		//   required because the GLUT key event functions do not report key modifiers states.
 		TwGLUTModifiersFunc(glutGetModifiers);
-		TwWindowSize(220, 320);
+		TwWindowSize(600,800);
 		TwDefine("Figure refresh = '0.0001f'");
 		TwDefine("Figure resizable = false");
 		TwDefine("Figure fontresizable = false");
@@ -614,7 +618,7 @@ int main(int argc, char** argv)
 		TwDefine("Figure size = '220 320' color='96 216 224'");
 		TwDefine("Figure visible = true");
 
-		int subwindow_2 = glutCreateSubWindow(mainWindow, subwindow2_x, subwindow2_y, subwindow2_w, subwindow2_h);
+		int subwindow_2 = glutCreateSubWindow(mainWindow, 0, 0, 800, 600);
 
 		glutDisplayFunc(subwindow2_display);
 		glutReshapeFunc(changeSize2);
