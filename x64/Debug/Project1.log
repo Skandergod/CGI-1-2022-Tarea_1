@@ -1,2 +1,10 @@
 ﻿  main.cpp
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(587,95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(587,81): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(587,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(587,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(617,95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(617,81): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(617,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\main.cpp(617,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Project1.vcxproj -> C:\Users\ccgucv\Desktop\Workbench\CGI-1-2022-Tarea_1\x64\Debug\Project1.exe
